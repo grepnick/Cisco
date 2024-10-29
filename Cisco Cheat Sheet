@@ -1,0 +1,29 @@
+# Cisco Commands Cheat Sheet
+
+## Standard Setup Stuff
+
+### Disable IP domain lookups
+no ip domain-lookup
+
+### Set Hostname
+hostname Switch-A
+
+### Set the management IP
+interface vlan 1 
+ip address 192.168.1.2 255.255.255.0 
+no shut
+
+### Layer 2 Switch Default Gateway
+ip default-gateway 192.168.1.1
+
+### Layer 3 Switch Default Route
+ip route 0.0.0.0 0.0.0.0 192.168.1.1
+
+### Setup SSH
+ip domain-name test.local
+crypto key generate rsa
+ip ssh time-out 60
+ip ssh authentication-retries 3
+line vty 0 4
+transport input ssh
+password SuperSecretPassword
